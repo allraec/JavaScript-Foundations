@@ -94,7 +94,11 @@ function mortgageCalculator(P, I, N, CR){
     let years = N;
     let name = "Allison";
 
-    if()
+     if(CR > 740){
+        intRate -= 0.005;
+    } else if(CR < 660){
+        intRate += 0.005;
+    }
 
     const monthlyInterestRate = intRate / 12;
     const periods = years * 12;
@@ -106,6 +110,7 @@ function mortgageCalculator(P, I, N, CR){
     return name + ", your monthly rate is " + monthlyRate;
 }
 
+/* console.log(mortgageCalculator(200000, 0.05, 30, 660)); */
 
 // 🏡 Task 6: Loops
 /* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
@@ -123,9 +128,33 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+function variableInterestRate(P, I, N, CR){
+    let principal = P;
+    let intRate = I;
+    let years = N;
+    let name = "Allison";
 
+     if(CR > 740){
+        intRate -= 0.005;
+    } else if(CR < 660){
+        intRate += 0.005;
+    }
 
+    intRate -= 0.02;
 
+    for(i = 0; i < 10; i++){
+        const monthlyInterestRate = intRate / 12;
+        const periods = years * 12;
+        const numerator =  monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods);
+        const denominator = Math.pow(1+monthlyInterestRate, periods) - 1;
+        const monthlyR = principal * numerator / denominator;
+        const monthlyRate = monthlyR.toFixed(0);
+        console.log(name, "with an interest rate of", intRate.toFixed(3), ", your monthly rate is $", monthlyRate);
+        intRate += 0.005;
+    }
+}
+
+variableInterestRate(200000, 0.04, 30, 730);
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */

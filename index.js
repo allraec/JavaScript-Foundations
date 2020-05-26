@@ -113,7 +113,6 @@ function mortgageCalculator(P, I, N, CR){
     } else if(CR < 660){
         intRate += 0.005;
     }
-
     const monthlyInterestRate = intRate / 12;
     const periods = years * 12;
     const numerator =  monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods);
@@ -174,8 +173,9 @@ function variableInterestRate(P, I, N, CR){
 }
 
 variableInterestRate(200000, 0.04, 30, 640);
-variableInterestRate(200000, 0.04, 30, 730);
-variableInterestRate(200000, 0.04, 30, 800);
+//variableInterestRate(200000, 0.04, 30, 730);
+//variableInterestRate(200000, 0.04, 30, 800);
+
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */

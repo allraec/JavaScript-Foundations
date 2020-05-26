@@ -149,7 +149,7 @@ function variableInterestRate(P, I, N, CR){
         const denominator = Math.pow(1+monthlyInterestRate, periods) - 1;
         const monthlyR = principal * numerator / denominator;
         const monthlyRate = monthlyR.toFixed(0);
-        console.log(name, "with an interest rate of", intRate.toFixed(3), ", your monthly rate is $", monthlyRate);
+        console.log(name, ", with an interest rate of", intRate.toFixed(3), ", your monthly rate is $", monthlyRate);
         intRate += 0.005;
     }
 }

@@ -172,7 +172,7 @@ function variableInterestRate(P, I, N, CR){
     }
 }
 
-variableInterestRate(200000, 0.04, 30, 640);
+//variableInterestRate(200000, 0.04, 30, 640);
 //variableInterestRate(200000, 0.04, 30, 730);
 //variableInterestRate(200000, 0.04, 30, 800);
 
@@ -182,6 +182,35 @@ variableInterestRate(200000, 0.04, 30, 640);
 
 /*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
 
+/* function variableInterestRate(P, I, N, CR, propTax, homeIns, HOA){
+    let principal = P;
+    let intRate = I;
+    let years = N;
+    let name = "Allison";
+
+     if(CR > 740){
+        intRate -= 0.005;
+    } else if(CR < 660){
+        intRate += 0.005;
+    }
+
+    const addFee = propTax + homeIns + HOA;
+
+    intRate -= 0.02;
+
+    for(i = 0; i < 10; i++){
+        const monthlyInterestRate = intRate / 12;
+        const periods = years * 12;
+        const numerator =  monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods);
+        const denominator = Math.pow(1+monthlyInterestRate, periods) - 1;
+        const monthlyR = (principal * numerator / denominator) + addFee;
+        const monthlyRate = (monthlyR).toFixed(0);
+        console.log(name+", with an interest rate of "+parseFloat(intRate.toFixed(3))+", your monthly rate is $"+ (monthlyRate));
+        intRate += 0.005;
+    }
+}
+
+variableInterestRate(200000, 0.04, 30, 700, 127, 156, 0); */
 
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
 

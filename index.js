@@ -41,8 +41,7 @@ When your math is correct, monthlyRate will equal 1073.64
 
 let numerator =  monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods);
 let denominator = Math.pow(1+monthlyInterestRate, periods) - 1;
-let monthlyR = principal * numerator / denominator;
-let monthlyRate = monthlyR.toFixed(2);
+let monthlyRate = principal * numerator / denominator;
 
 /* console.log(numerator);
 console.log(denominator);
@@ -64,13 +63,12 @@ function mortgageCalculator(){
     let periods = years * 12;
     let numerator =  monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods);
     let denominator = Math.pow(1+monthlyInterestRate, periods) - 1;
-    let monthlyR = principal * numerator / denominator;
-    let monthlyRate = monthlyR.toFixed(2);
+    let monthlyRate = principal * numerator / denominator;
 
-    return name + ", your monthly rate is " + monthlyRate;
+    return name + ", your monthly rate is " + monthlyRate.toFixed(2);
 }
 
-//console.log(mortgageCalculator());
+// console.log(mortgageCalculator());
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
@@ -88,13 +86,12 @@ function mortgageCalculator(P, I, N){
     const periods = years * 12;
     const numerator =  monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods);
     const denominator = Math.pow(1+monthlyInterestRate, periods) - 1;
-    const monthlyR = principal * numerator / denominator;
-    const monthlyRate = monthlyR.toFixed(2);
+    const monthlyRate = principal * numerator / denominator;
 
-    return name + ", your monthly rate is " + monthlyRate;
+    return name + ", your monthly rate is " + monthlyRate.toFixed(2);
 }
 
-//console.log(mortgageCalculator(200000, 0.05, 30));
+// console.log(mortgageCalculator(200000, 0.05, 30));
 
 // 🏡 Task 5: Conditionals
 /* Add another parameter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
@@ -117,10 +114,9 @@ function mortgageCalculator(P, I, N, CR){
     const periods = years * 12;
     const numerator =  monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods);
     const denominator = Math.pow(1+monthlyInterestRate, periods) - 1;
-    const monthlyR = principal * numerator / denominator;
-    const monthlyRate = monthlyR.toFixed(2);
+    const monthlyRate = principal * numerator / denominator;
 
-    return name + ", your monthly rate is " + monthlyRate;
+    return name + ", your monthly rate is " + monthlyRate.toFixed(2);
 }
 
 
@@ -165,15 +161,14 @@ function variableInterestRate(P, I, N, CR){
         const periods = years * 12;
         const numerator =  monthlyInterestRate * Math.pow((1+monthlyInterestRate), periods);
         const denominator = Math.pow(1+monthlyInterestRate, periods) - 1;
-        const monthlyR = principal * numerator / denominator;
-        const monthlyRate = monthlyR.toFixed(0);
-        console.log(name+", with an interest rate of "+parseFloat(intRate.toFixed(3))+", your monthly rate is $"+ monthlyRate);
+        const monthlyRate = principal * numerator / denominator;
+        console.log(name+", with an interest rate of "+parseFloat(intRate.toFixed(3))+", your monthly rate is $"+ monthlyRate.toFixed(0));
         intRate += 0.005;
     }
 }
 
-//variableInterestRate(200000, 0.04, 30, 640);
-//variableInterestRate(200000, 0.04, 30, 730);
+// variableInterestRate(200000, 0.04, 30, 640);
+variableInterestRate(200000, 0.04, 30, 730);
 //variableInterestRate(200000, 0.04, 30, 800);
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//

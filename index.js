@@ -85,7 +85,12 @@ function mortgageCalculator(principal, intRate, years){
     return name + ", your monthly rate is " + monthlyRate.toFixed(2);
 }
 
-//console.log(mortgageCalculator(200000, 0.05, 30));
+let P = 200000;
+let I = 0.05;
+let N = 30;
+
+
+// console.log(mortgageCalculator(P, I, N));
 
 // 🏡 Task 5: Conditionals
 /* Add another parameter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
@@ -107,11 +112,9 @@ function mortgageCalculator(principal, intRate, years, CR){
     return name + ", your monthly rate is " + monthlyRate.toFixed(2);
 }
 
+let CR = 700;
 
-
-//console.log(mortgageCalculator(200000, 0.05, 30, 500)); 
-//console.log(mortgageCalculator(200000, 0.05, 30, 680));
-//console.log(mortgageCalculator(200000, 0.05, 30, 750));
+// console.log(mortgageCalculator(P, I, N, CR)); 
 
 
 // 🏡 Task 6: Loops
@@ -148,9 +151,13 @@ function variableInterestRate(principal, intRate, years, CR){
     }
 }
 
-//variableInterestRate(200000, 0.04, 30, 640);
-// variableInterestRate(200000, 0.04, 30, 730);
-//variableInterestRate(200000, 0.04, 30, 800);
+P = 200000;
+I = 0.04;
+N = 30;
+CR = 800;
+
+variableInterestRate(P, I, N, CR);
+
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
